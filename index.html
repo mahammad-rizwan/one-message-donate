@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#04061A">
+<meta name="description" content="UPI payment details for donating to One Message, which provides Sehri food for students during Ramadan.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' data:; style-src 'unsafe-inline'; script-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<title>Donate · One Message</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2304061A'/%3E%3Cmask id='m'%3E%3Crect width='64' height='64' fill='%23fff'/%3E%3Ccircle cx='38' cy='26' r='17' fill='%23000'/%3E%3C/mask%3E%3Ccircle cx='31' cy='33' r='20' fill='%23F8C06A' mask='url(%23m)'/%3E%3C/svg%3E">
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #04061A; --line: rgba(157,184,255,.22); --ink: #EEF3FF; --ink2: #B7C4E8; --muted: #7E8BB4;
+    --moon: #9DB8FF; --gold: #F8C06A; --mint: #7CF0C5;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; color: var(--ink); font: 15px/1.55 var(--sans);
+    background: radial-gradient(120% 60% at 50% 0%, #16205F 0%, #0B1238 45%, #04061A 100%) fixed, var(--bg);
+  }
+  main {
+    max-width: 440px; margin: 0 auto; display: grid; gap: 16px;
+    padding: max(28px, env(safe-area-inset-top)) 16px max(32px, env(safe-area-inset-bottom));
+  }
+  header { display: grid; gap: 8px; text-align: center; }
+  .ar { color: var(--gold); font-size: 19px; margin: 0; }
+  h1 { font-size: 26px; line-height: 1.15; margin: 0; text-wrap: balance; }
+  .sub { color: var(--ink2); margin: 0; }
+  .card { background: rgba(12,18,64,.72); border: 1px solid var(--line); border-radius: 22px; padding: 18px; display: grid; gap: 12px; }
+  .label { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--moon); margin: 0; }
+  .upi { display: flex; align-items: center; gap: 10px; padding: 8px 8px 8px 14px; border-radius: 16px; border: 1.2px solid rgba(157,184,255,.45); background: rgba(4,6,26,.55); }
+  /* Not monospace: in most monospace faces the l of @axl reads as a 1. */
+  .upi span { flex: 1; min-width: 0; font: 700 17px/1.3 var(--sans); letter-spacing: .02em; word-break: break-all; user-select: all; }
+  button, .btn {
+    appearance: none; border: 0; border-radius: 13px; cursor: pointer; text-decoration: none; text-align: center;
+    font: 700 14px var(--sans); display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+    min-height: 44px; padding: 0 16px;
+  }
+  .primary { background: linear-gradient(135deg, #8AD4FF, #B48CFF); color: #0A0F2A; }
+  .ghost { background: rgba(157,184,255,.08); color: var(--ink); border: 1px solid var(--line); }
+  .qr { justify-self: center; background: #fff; padding: 10px; border-radius: 18px; width: min(260px, 100%); }
+  .qr img { display: block; width: 100%; height: auto; border-radius: 10px; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  ol { margin: 0; padding-left: 20px; color: var(--ink2); display: grid; gap: 6px; }
+  ol b { color: var(--ink); }
+  .hadith { margin: 0; padding: 4px 0 4px 14px; border-left: 2px solid rgba(157,184,255,.6); }
+  .hadith p { margin: 0; font-style: italic; }
+  .hadith cite { display: block; color: var(--moon); font-size: 12.5px; font-style: normal; margin-top: 4px; }
+  .note { color: var(--muted); font-size: 12.5px; text-align: center; margin: 0; }
+  .toast {
+    position: fixed; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom)); transform: translateX(-50%);
+    background: #0E164A; color: var(--mint); border: 1px solid rgba(124,240,197,.45);
+    padding: 10px 16px; border-radius: 999px; font-weight: 700; font-size: 13px;
+    opacity: 0; transition: opacity .2s; pointer-events: none;
+  }
+  .toast.on { opacity: 1; }
+  :focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) { .toast { transition: none; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <p class="ar" lang="ar" dir="rtl">الصدقة</p>
+    <h1>Support Sehri for students</h1>
+    <p class="sub">Pay with any UPI app using the details below, then go back to the One Message app to submit your payment proof.</p>
+  </header>
+
+  <blockquote class="hadith">
+    <p>"Charity does not decrease wealth."</p>
+    <cite>Prophet Muhammad ﷺ · Sahih Muslim</cite>
+  </blockquote>
+
+  <section class="card" aria-labelledby="upi-h">
+    <p class="label" id="upi-h">UPI ID</p>
+    <div class="upi">
+      <span id="upi">9632716392@axl</span>
+      <button class="primary" id="copy" type="button">Copy</button>
+    </div>
+    <a class="btn ghost" href="upi://pay?pa=9632716392%40axl&amp;pn=One%20Message&amp;cu=INR">Open my UPI app</a>
+  </section>
+
+  <section class="card" aria-labelledby="qr-h">
+    <p class="label" id="qr-h">Or scan the QR code</p>
+    <div class="qr"><img src="qr.jpeg" alt="UPI QR code for 9632716392@axl" width="520" height="520"></div>
+    <a class="btn ghost" href="qr.jpeg" download="one-message-donation-qr.jpeg">Download QR code</a>
+  </section>
+
+  <section class="card" aria-labelledby="next-h">
+    <p class="label" id="next-h">After you pay</p>
+    <ol>
+      <li>Take a <b>screenshot</b> of the payment confirmation.</li>
+      <li>Go back to <b>One Message → Donate</b>.</li>
+      <li>Enter the amount, attach the screenshot and submit. A super admin verifies it.</li>
+    </ol>
+    <div class="row">
+      <a class="btn primary" href="sehriconnect://donation?tab=give">Back to the app</a>
+      <button class="ghost" id="copy2" type="button">Copy UPI ID</button>
+    </div>
+  </section>
+
+  <p class="note">This page only shows payment details. Payments go straight from your UPI app to the organisers; nothing is processed here.</p>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+  (function () {
+    var id = '9632716392@axl';
+    var toast = document.getElementById('toast');
+    var timer;
+    function show(msg) {
+      toast.textContent = msg;
+      toast.classList.add('on');
+      clearTimeout(timer);
+      timer = setTimeout(function () { toast.classList.remove('on'); }, 1800);
+    }
+    function fallback() {
+      var r = document.createRange();
+      r.selectNodeContents(document.getElementById('upi'));
+      var s = window.getSelection();
+      s.removeAllRanges(); s.addRange(r);
+      try { document.execCommand('copy') ? show('UPI ID copied') : show('Long-press the UPI ID to copy it'); }
+      catch (e) { show('Long-press the UPI ID to copy it'); }
+    }
+    function copy() {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(id).then(function () { show('UPI ID copied'); }, fallback);
+      } else {
+        fallback();
+      }
+    }
+    document.getElementById('copy').addEventListener('click', copy);
+    document.getElementById('copy2').addEventListener('click', copy);
+  })();
+</script>
+</body>
+</html>
