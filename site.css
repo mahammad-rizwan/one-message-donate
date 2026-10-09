@@ -1,0 +1,38 @@
+/* Shared by the policy pages. index.html keeps its own inline styles. */
+:root {
+  color-scheme: dark;
+  --bg: #04061A; --line: rgba(157,184,255,.22); --ink: #EEF3FF; --ink2: #B7C4E8; --muted: #7E8BB4;
+  --moon: #9DB8FF; --gold: #F8C06A;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; color: var(--ink); font: 15px/1.65 var(--sans);
+  background: radial-gradient(120% 50% at 50% 0%, #16205F 0%, #0B1238 45%, #04061A 100%) fixed, var(--bg);
+}
+main {
+  max-width: 720px; margin: 0 auto;
+  padding: max(28px, env(safe-area-inset-top)) 18px max(40px, env(safe-area-inset-bottom));
+}
+.top { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
+.brand { color: var(--gold); font-weight: 700; text-decoration: none; letter-spacing: .02em; }
+.updated { color: var(--muted); font-size: 13px; }
+h1 { font-size: clamp(26px, 6vw, 34px); line-height: 1.15; margin: 0 0 10px; text-wrap: balance; }
+h2 { font-size: 19px; margin: 32px 0 8px; color: var(--ink); }
+h3 { font-size: 15.5px; margin: 18px 0 4px; color: var(--moon); }
+p, li { color: var(--ink2); }
+p { margin: 0 0 12px; max-width: 68ch; }
+ul, ol { margin: 0 0 12px; padding-left: 22px; max-width: 68ch; }
+li { margin-bottom: 6px; }
+b, strong { color: var(--ink); }
+a { color: var(--moon); }
+.lead { font-size: 16px; color: var(--ink2); }
+.card { background: rgba(12,18,64,.72); border: 1px solid var(--line); border-radius: 18px; padding: 16px 18px; margin: 14px 0; }
+.card p:last-child, .card ul:last-child, .card ol:last-child { margin-bottom: 0; }
+.table-wrap { overflow-x: auto; margin: 10px 0 14px; }
+table { border-collapse: collapse; width: 100%; min-width: 520px; font-size: 14px; }
+th, td { text-align: left; vertical-align: top; padding: 9px 10px; border-bottom: 1px solid var(--line); color: var(--ink2); }
+th { color: var(--ink); font-weight: 700; }
+footer { margin-top: 36px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; display: flex; gap: 16px; flex-wrap: wrap; }
+footer a { color: var(--muted); }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
