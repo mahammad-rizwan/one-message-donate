@@ -11,8 +11,8 @@ The app opens this page in the phone's browser instead of showing payment detail
 Live at **https://onemessage.me** (domain from Namecheap, HTTPS certificate issued by GitHub). Served by GitHub Pages from the `main` branch root. It is plain HTML with no build step:
 
 - `index.html`: the donation page
-- `privacy.html`: the app's privacy policy (linked from the app and both store listings)
-- `delete-account.html`: how to delete an account without the app (Google Play requirement)
+- `privacy.html` (served at `/privacy`): the app's privacy policy (linked from the app and both store listings)
+- `delete-account.html` (served at `/delete-account`): how to delete an account without the app (Google Play requirement)
 - `site.css`: styles for the two policy pages
 - `qr.jpeg`: the UPI QR code
 - `.nojekyll`: serve the files as they are
