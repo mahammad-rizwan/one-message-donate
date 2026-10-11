@@ -8,7 +8,7 @@ The app opens this page in the phone's browser instead of showing payment detail
 
 ## Hosting
 
-Served by GitHub Pages from the `main` branch root. It is plain HTML with no build step:
+Live at **https://onemessage.me** (domain from Namecheap, HTTPS certificate issued by GitHub). Served by GitHub Pages from the `main` branch root. It is plain HTML with no build step:
 
 - `index.html`: the donation page
 - `privacy.html`: the app's privacy policy (linked from the app and both store listings)
@@ -16,5 +16,6 @@ Served by GitHub Pages from the `main` branch root. It is plain HTML with no bui
 - `site.css`: styles for the two policy pages
 - `qr.jpeg`: the UPI QR code
 - `.nojekyll`: serve the files as they are
+- `CNAME`: the custom domain; do not delete it, or the site falls back to the github.io address
 
 To change the UPI ID, edit it in `index.html` in three places: the visible ID, the `upi://` link and the copy script. Replace `qr.jpeg` to match.
