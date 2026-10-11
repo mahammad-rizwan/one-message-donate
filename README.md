@@ -18,4 +18,4 @@ Live at **https://onemessage.me** (domain from Namecheap, HTTPS certificate issu
 - `.nojekyll`: serve the files as they are
 - `CNAME`: the custom domain; do not delete it, or the site falls back to the github.io address
 
-To change the UPI ID, edit it in `index.html` in three places: the visible ID, the `upi://` link and the copy script. Replace `qr.jpeg` to match.
+To change the UPI ID, edit it in `index.html` in two places: the visible ID and the copy script. `qr.jpeg` is the PhonePe QR and is replaced separately.
