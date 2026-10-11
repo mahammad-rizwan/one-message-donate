@@ -14,8 +14,8 @@ Live at **https://onemessage.me** (domain from Namecheap, HTTPS certificate issu
 - `privacy.html` (served at `/privacy`): the app's privacy policy (linked from the app and both store listings)
 - `delete-account.html` (served at `/delete-account`): how to delete an account without the app (Google Play requirement)
 - `site.css`: styles for the two policy pages
-- `qr.jpeg`: the UPI QR code
+- `qr.png`: the PhonePe UPI QR code for onemessage@axl
 - `.nojekyll`: serve the files as they are
 - `CNAME`: the custom domain; do not delete it, or the site falls back to the github.io address
 
-To change the UPI ID, edit it in `index.html` in two places: the visible ID and the copy script. `qr.jpeg` is the PhonePe QR and is replaced separately.
+To change the UPI ID, edit it in `index.html` in two places: the visible ID and the copy script. `qr.png` is the PhonePe QR and is replaced separately; check a new one decodes to the same ID.
